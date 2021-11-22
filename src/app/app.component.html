@@ -6,6 +6,7 @@
 <app-hero-toolbar
     [heroes]="heroes"
     (filterChange)="onFilterChange($event)"
+    (reset)="onReset()"
 ></app-hero-toolbar>
 
 <ul>

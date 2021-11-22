@@ -75,4 +75,8 @@ export class AppComponent implements OnInit {
       this.displayMarvel = false;
     }
   }
+
+  public onReset(): void {
+    this.ngOnInit();
+  }
 }

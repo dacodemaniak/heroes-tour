@@ -7,4 +7,8 @@
         <li [ngClass]="{'active': filter === 1}" (click)="filter = 1">Marvel</li>
         <li [ngClass]="{'active': filter === 2}" (click)="filter = 2">Comics</li>
     </ul>
+
+    <button type="button" (click)="onReset()">
+        Vider la liste
+    </button>
 </div>

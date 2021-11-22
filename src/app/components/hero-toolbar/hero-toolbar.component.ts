@@ -10,6 +10,7 @@ export class HeroToolbarComponent implements OnInit {
 
   @Input() public heroes: Hero[] = [];
   @Output() public filterChange: EventEmitter<number> = new EventEmitter();
+  @Output() public reset: EventEmitter<void> = new EventEmitter();
 
   public displayed: number = 0;
   private _filter: number = 0;
@@ -42,6 +43,10 @@ export class HeroToolbarComponent implements OnInit {
   }
   ngOnInit(): void {
     this.displayed = this.heroes.length;
+  }
+
+  public onReset(): void {
+    this.reset.emit();
   }
 
 }
