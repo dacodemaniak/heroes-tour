@@ -5,11 +5,12 @@
 
 <app-hero-toolbar
     [heroes]="heroes"
+    (filterChange)="onFilterChange($event)"
 ></app-hero-toolbar>
 
 <ul>
     <ng-container *ngFor="let hero of heroes">
-        <li class="marvel" *ngIf="hero.isMarvel">
+        <li class="marvel" *ngIf="filter === 0 || hero.isMarvel === displayMarvel">
             {{ hero.name }} | {{ hero.isMarvel ? 'Marvel' : 'Comics'}} | {{ hero.isMarvel }} <span (click)="remove(hero)">x</span>
         </li>
     </ng-container>

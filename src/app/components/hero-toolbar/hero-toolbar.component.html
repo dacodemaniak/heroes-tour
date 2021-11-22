@@ -1,4 +1,10 @@
 <div class="toolbar">
     Heroes : {{ heroes.length }}
     Displayed : {{ displayed }}
+
+    <ul>
+        <li [ngClass]="{'active': filter === 0}" (click)="filter = 0">Tous</li>
+        <li [ngClass]="{'active': filter === 1}" (click)="filter = 1">Marvel</li>
+        <li [ngClass]="{'active': filter === 2}" (click)="filter = 2">Comics</li>
+    </ul>
 </div>

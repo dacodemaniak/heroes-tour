@@ -16,6 +16,9 @@ export class AppComponent implements OnInit {
 
   public heroes: Hero[];
 
+  public filter: number = 0;
+  public displayMarvel: boolean = true;
+
   public constructor() {
     this.heroes = [];
   }
@@ -55,10 +58,21 @@ export class AppComponent implements OnInit {
     const index: number = this.heroes.findIndex((item: Hero) => {
       return item.name === hero.name
     });
-    
+
     this.heroes.splice(
       index,
       1
     );
+  }
+
+  public onFilterChange(event: any): void {
+    console.log(`Recieved ${event}`);
+    console.log('Je reçois ' + event);
+    this.filter = event;
+    if (event === 1) {
+      this.displayMarvel = true;
+    } else {
+      this.displayMarvel = false;
+    }
   }
 }
