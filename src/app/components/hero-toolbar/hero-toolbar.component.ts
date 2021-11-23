@@ -45,8 +45,4 @@ export class HeroToolbarComponent implements OnInit {
     this.displayed = this.heroes.length;
   }
 
-  public onReset(): void {
-    this.reset.emit();
-  }
-
 }
