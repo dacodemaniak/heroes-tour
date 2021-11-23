@@ -20,6 +20,10 @@ export class AppRoutingModule {
       component: HomeComponent,
     },
     {
+      path: 'add/hero',
+      component: AddHeroComponent
+    },
+    {
       path: '**',
       redirectTo: 'home/hero',
       pathMatch: 'full'

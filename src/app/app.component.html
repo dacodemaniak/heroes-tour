@@ -4,30 +4,3 @@
 </p>
 
 <router-outlet></router-outlet>
-
-<ul>
-    <ng-container *ngFor="let hero of heroes">
-        <li class="marvel" *ngIf="filter === 0 || hero.isMarvel === displayMarvel">
-            {{ hero.name }} | {{ hero.isMarvel ? 'Marvel' : 'Comics'}} | {{ hero.isMarvel }} <span (click)="remove(hero)">x</span>
-        </li>
-    </ng-container>
-</ul>
-
-<button type="button" (click)="addHero()">
-    Ajouter
-</button>
-
-<table>
-    <thead>
-        <tr>
-            <th>Heroes name</th>
-            <th>Comics / Marvel</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let hero of heroes">
-            <td>{{ hero.name }}</td>
-            <td>{{ hero.isMarvel ? 'Marvel' : 'Comics' }}</td>
-        </tr>
-    </tbody>
-</table>

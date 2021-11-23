@@ -7,4 +7,19 @@
         <li [ngClass]="{'active': filter === 1}" (click)="filter = 1">Marvel</li>
         <li [ngClass]="{'active': filter === 2}" (click)="filter = 2">Comics</li>
     </ul>
+
+    <nav>
+        <ul>
+            <li>
+                <a [routerLink]="['/', 'home', 'hero']">
+                    Home
+                </a>
+            </li>
+            <li>
+                <a [routerLink]="['/', 'add', 'hero']">
+                    Ajouter
+                </a>
+            </li>
+        </ul>
+    </nav>
 </div>

@@ -4,6 +4,7 @@ import { HeroToolbarComponent } from './components/hero-toolbar/hero-toolbar.com
 import { HomeComponent } from './components/home/home.component';
 import { AddHeroComponent } from './components/add-hero/add-hero.component';
 import { SharedModule } from '../shared/shared.module';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -15,7 +16,8 @@ import { SharedModule } from '../shared/shared.module';
   ],
   imports: [
     CommonModule,
-    SharedModule
+    SharedModule,
+    RouterModule
   ],
   exports: [
     HomeComponent,
