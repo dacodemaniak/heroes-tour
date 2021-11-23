@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Hero } from '../../models/hero';
 import { HeroService } from '../../services/hero.service';
 
 @Component({
@@ -9,10 +10,9 @@ import { HeroService } from '../../services/hero.service';
 export class HomeComponent implements OnInit {
 
   constructor(
-    private heroService: HeroService
+    public heroService: HeroService
   ) { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
 }

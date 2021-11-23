@@ -1,9 +1,13 @@
-export class Hero {
+import { Model } from "src/app/shared/models/model";
+
+export class Hero extends Model {
     private _name: string;
     private _isMarvel: boolean;
     private birthDate: Date;
 
     public constructor() {
+        super();
+        
         this._name = '';
         this._isMarvel = true;
         this.birthDate = null;

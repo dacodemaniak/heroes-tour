@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { HeroToolbarComponent } from './components/hero-toolbar/hero-toolbar.component';
 import { HomeComponent } from './components/home/home.component';
 import { AddHeroComponent } from './components/add-hero/add-hero.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 
@@ -13,7 +14,8 @@ import { AddHeroComponent } from './components/add-hero/add-hero.component';
     AddHeroComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    SharedModule
   ],
   exports: [
     HomeComponent,

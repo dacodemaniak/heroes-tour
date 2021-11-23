@@ -1,1 +1,25 @@
 <app-hero-toolbar></app-hero-toolbar>
+
+<h1>Heroes</h1>
+
+<table>
+    <thead>
+        <th>&nbsp;</th>
+        <th>#</th>
+        <th>Name</th>
+        <th>Collection</th>
+        <th>Birth date</th>
+        <th>Action</th>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let entry of heroService.findAll() | keyvalue">
+            <td>&nbsp;</td>
+            <td>{{ entry.key }}</td>
+            <td>{{ entry.value.name }} [{{ entry.value.name | initial: 2 | uppercase }}]</td>
+            <td>{{ entry.value.isMarvel ? 'Marvel' : 'Comics' }}</td>
+            <td>{{ entry.value.getBirthDate() | date: 'dd/MM/yyyy' }}</td>
+            <td>&nbsp;</td>
+        </tr>
+    </tbody>
+</table>
