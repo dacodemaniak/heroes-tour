@@ -3,16 +3,15 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeroToolbarComponent } from './components/hero-toolbar/hero-toolbar.component';
-
+import { HeroModule } from './hero/hero.module';
 @NgModule({
   declarations: [
     AppComponent,
-    HeroToolbarComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HeroModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Hero } from './models/hero';
+import { Hero } from './hero/models/hero';
+import { HeroService } from './hero/services/hero.service';
 
 @Component({
   selector: 'app-root',
@@ -19,7 +20,11 @@ export class AppComponent implements OnInit {
   public filter: number = 0;
   public displayMarvel: boolean = true;
 
-  public constructor() {
+  public displayHome: boolean = true;
+
+  public constructor(
+    private heroService: HeroService
+  ) {
     this.heroes = [];
   }
 
@@ -48,10 +53,7 @@ export class AppComponent implements OnInit {
   }
 
   public addHero(): void {
-    const hero: Hero = new Hero();
-    hero.name = 'Joker';
-    hero.isMarvel = false;
-    this.heroes.push(hero);
+    this.displayHome = !this.displayHome;
   }
 
   public remove(hero: Hero): void {

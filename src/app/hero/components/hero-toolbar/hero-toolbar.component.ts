@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Hero } from 'src/app/models/hero';
+import { Hero } from 'src/app/hero/models/hero';
 
 @Component({
   selector: 'app-hero-toolbar',
