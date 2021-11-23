@@ -1,11 +1,25 @@
 <app-hero-toolbar></app-hero-toolbar>
 
-<form [formGroup]="formHero">
+<form [formGroup]="formHero" (ngSubmit)="onSubmit()">
     <fieldset>
         <mat-form-field>
             <label>Hero's name</label>
-            <input matInput formControlName="name">
+            <input matInput formControlName="name" autocomplete="no-complete">
+            <mat-error *ngIf="controls.name.errors">
+                Name is required
+            </mat-error>
         </mat-form-field>
+
+        <mat-slide-toggle formControlName="isMarvel">
+            {{ isMarvel() ? 'Marvel' : 'Comics'}}
+        </mat-slide-toggle>
+
+        <mat-form-field>
+            <label (click)="showPassword = !showPassword">Password</label>
+            <input matInput [type]="showPassword ? 'text' : 'password'">
+        </mat-form-field>
+
+        <button mat-raised-button color="primary" [disabled]="formHero.invalid">Valider</button>
     </fieldset>
 </form>
 

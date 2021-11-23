@@ -1,3 +1,4 @@
+import { Inject } from "@angular/core";
 import { Model } from "src/app/shared/models/model";
 
 export class Hero extends Model {
@@ -35,6 +36,14 @@ export class Hero extends Model {
 
     public setBirthDate(date: Date): Hero {
         this.birthDate = date;
+        return this;
+    }
+
+    public deserialize(formData: any): Hero {
+        this.name = formData.name;
+        this.isMarvel = formData.isMarvel;
+        this.setBirthDate(formData.birthDate);
+  
         return this;
     }
 }
