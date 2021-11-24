@@ -13,13 +13,17 @@
     </thead>
 
     <tbody>
-        <tr *ngFor="let entry of heroService.findAll() | async | keyvalue">
+        <tr *ngFor="let entry of heroesList | keyvalue">
             <td>&nbsp;</td>
             <td>{{ entry.key }}</td>
             <td>{{ entry.value.name }} [{{ entry.value.name | initial: 2 | uppercase }}]</td>
             <td>{{ entry.value.isMarvel ? 'Marvel' : 'Comics' }}</td>
             <td>{{ entry.value.getBirthDate() | date: 'dd/MM/yyyy' }}</td>
-            <td>&nbsp;</td>
+            <td>
+                <button mat-icon-button color="danger" (click)="remove(entry.key)">
+                    <mat-icon>delete</mat-icon>
+                </button>
+            </td>
         </tr>
     </tbody>
 

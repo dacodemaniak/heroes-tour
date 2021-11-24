@@ -7,6 +7,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatIconModule } from '@angular/material/icon';
 @NgModule({
   declarations: [],
   imports: [
@@ -24,6 +25,7 @@ export class MaterialModule {
     MatInputModule,
     MatButtonModule,
     MatDatepickerModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
+    MatIconModule
   ]
 }

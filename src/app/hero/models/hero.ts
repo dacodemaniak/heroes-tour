@@ -46,4 +46,13 @@ export class Hero extends Model {
   
         return this;
     }
+
+    public fromBackend(data: any): Hero {
+        this.name = data._name;
+        this.isMarvel = data._isMarvel;
+        this.id = data.id;
+        this.setBirthDate(data.birthDate);
+
+        return this;
+    }
 }

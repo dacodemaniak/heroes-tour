@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { take } from 'rxjs/operators';
 import { Hero } from '../../models/hero';
 import { HeroService } from '../../services/hero.service';
 
@@ -50,8 +51,14 @@ export class AddHeroComponent implements OnInit {
     if (this.formHero.valid) {
       const hero: Hero = new Hero().deserialize(this.formHero.value);
       console.log(JSON.stringify(this.formHero.value));
-      this.heroService.add(hero);
-      this.router.navigate(['/', 'home', 'hero']);
+      this.heroService.add(hero)
+        .pipe(
+          take(1)
+        ).subscribe(() => {
+          this.router.navigate(['/', 'home', 'hero']);
+        }, (error) => {
+          
+        })
     }
   }
 }
