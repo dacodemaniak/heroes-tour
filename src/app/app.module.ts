@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeroModule } from './hero/hero.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { fakeBackendProvider } from './shared/services/fake-backend.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -15,7 +16,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HeroModule,
     BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [
+    fakeBackendProvider
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

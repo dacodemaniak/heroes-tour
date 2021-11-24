@@ -1,5 +1,7 @@
+import { Observable } from "rxjs";
+
 export interface ModelServiceInterface<T> {
-    findAll(): Map<number, T>;
+    findAll(): Observable<Map<number, T>>;
     findOne(id: number): T | undefined;
     add(t: T): T;
     update(t: T): void;

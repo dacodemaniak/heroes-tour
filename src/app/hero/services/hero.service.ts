@@ -1,7 +1,11 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable, of } from 'rxjs';
 import { ModelServiceInterface } from 'src/app/shared/interfaces/model-service-interface';
 import { Hero } from '../models/hero';
+import { environment } from 'src/environments/environment';
 
+import { take, map } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
@@ -9,13 +13,24 @@ export class HeroService implements ModelServiceInterface<Hero> {
 
   private collection: Map<number, Hero> = new Map();
 
-  constructor() {
-    console.log('Hello HeroService');
+  constructor(
+    private httpClient: HttpClient
+  ) {
     this._mock();
   }
-  findAll(): Map<number, Hero> {
-    return this.collection;
+
+  findAll(): Observable<Map<number, Hero>> {
+    return this.httpClient.get<any>(
+      `${environment.api}hero`
+    )
+    .pipe(
+      take(1),
+      map((results: any[]) => {
+        return this.collection;
+      })
+    );
   }
+
   findOne(id: number): Hero | undefined{
     return this.collection.get(id);
   }
@@ -44,3 +59,4 @@ export class HeroService implements ModelServiceInterface<Hero> {
     this.add(hero);
   }
 }
+

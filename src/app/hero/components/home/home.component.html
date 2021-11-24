@@ -13,7 +13,7 @@
     </thead>
 
     <tbody>
-        <tr *ngFor="let entry of heroService.findAll() | keyvalue">
+        <tr *ngFor="let entry of heroService.findAll() | async | keyvalue">
             <td>&nbsp;</td>
             <td>{{ entry.key }}</td>
             <td>{{ entry.value.name }} [{{ entry.value.name | initial: 2 | uppercase }}]</td>
